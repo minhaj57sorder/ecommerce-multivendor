@@ -1,6 +1,6 @@
-import FeaturedCategory from "./components/featuredCategory/FeaturedCategory"
-import ProductCategory from "./components/productCategory/ProductCategory"
-import SliderComp from "./components/slider/SliderComp"
+import FeaturedCategory from "@/app/components/featuredCategory/FeaturedCategory"
+import ProductCategory from "@/app/components/productCategory/ProductCategory"
+import SliderComp from "@/app/components/slider/SliderComp"
 export default function page() {
   return (
     <div>
