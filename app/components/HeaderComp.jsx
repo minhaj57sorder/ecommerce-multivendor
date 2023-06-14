@@ -1,15 +1,19 @@
 import { BsSearch, BsGooglePlay } from "react-icons/bs";
 import { RiHomeSmileFill } from "react-icons/ri";
 import { BiCart } from "react-icons/bi";
+import Link from "next/link";
 
 const HeaderComp = () => {
   return (
     <div className="flex justify-center max-w-full bg-slate-50 py-2 px-2 md:px-0">
       <div className="xl:w-[1280px] w-full">
         <div className="flex justify-between items-center ">
+          <Link href="/">
           <div className="logo text-4xl text-slate-800 md:block hidden">
             <RiHomeSmileFill />
           </div>
+
+          </Link>
           <div className="searchbar w-full md:w-[30rem] relative">
             <input
               type="text"
