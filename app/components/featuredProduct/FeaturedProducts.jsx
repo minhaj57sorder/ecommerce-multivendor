@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Rating from "@/app/components/ratings/Rating";
+import Rating from "../ratings/Rating";
+import Link from "next/link";
 async function getProducts() {
   const res = await fetch(
     "https://fakestoreapi.com/products/"
@@ -18,14 +19,14 @@ async function getProducts() {
 const maxCharLength = (str,len)=>{
   return str.slice(0,len) +( str.length > len ? '...' : '');
 }
-const page = async () => {
+const FeaturedProducts = async () => {
   const data = await getProducts();
   // console.log(data);
   return (
     <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
       <div className="xl:w-[1280px] w-full">
-        <div>Products List</div>
-        <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-1 items-stretch">
+        <div>Category</div>
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-1 mx-[-0.5rem] px-[0.5rem] items-stretch">
           {data.map((e) => (
             <div className=" bg-white">
               <div className=" text-black overflow-auto h-full flex flex-col sm:py-2 py-1 sm:px-2 px-1 border-[1px] hover:border-yellow-400 hover:shadow-md relative">
@@ -40,7 +41,7 @@ const page = async () => {
                 </div>
                 <Rating value={3.5} text={'40'}/>
                 
-                <div className="text-xs sm:text-sm cursor-pointer">{maxCharLength(e.title,120)}</div>
+                <Link href={`/products/${e.id}`}><div className="text-xs sm:text-sm cursor-pointer hover:text-yellow-500"> {maxCharLength(e.title,120)} </div> </Link>
                 <div className="flex items-baseline">
                   <div className="text-[1.6rem]">${e.price}</div>
                   <div className="text-xs ml-1">List: ${e.price}</div>
@@ -56,4 +57,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default FeaturedProducts;

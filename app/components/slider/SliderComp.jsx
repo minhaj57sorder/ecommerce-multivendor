@@ -22,15 +22,15 @@ export default function SliderComp() {
   };
 
   return (
-    <>
+    <div className="h-96">
       <Swiper
         pagination={pagination}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><Image width={300} height={300} src={"https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png"}/></SwiperSlide>
-        <SwiperSlide><Image width={300} height={300} src={"https://png.pngtree.com/background/20230303/original/pngtree-green-sparkling-bg-picture-image_2079950.jpg"}/></SwiperSlide>
+        <SwiperSlide><Image width={300} height={300} src={"https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png"} alt="pintree"/></SwiperSlide>
+        <SwiperSlide><Image width={300} height={300} src={"https://png.pngtree.com/background/20230303/original/pngtree-green-sparkling-bg-picture-image_2079950.jpg"} alt="bg sparkling pic"/></SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

@@ -1,30 +1,46 @@
-import { RiHomeSmileFill } from "react-icons/ri";
-const ProductCategory = () => {
+import Image from "next/image";
+async function getCategory() {
+  const res = await fetch(
+    "https://fakestoreapi.com/products/category/jewelery"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+const ProductCategory = async () => {
+  const data = await getCategory();
   return (
-      <div className="flex justify-center max-w-full py-2 px-2 md:px-0">
-        <div className="xl:w-[1280px] w-full">
-      <div>Category</div>
-          <div className="flex mx-[-0.5rem] justify-between items-center">
-            <div className="sm:bg-white sm:text-black rounded-full w-1/4 mx-2 flex items-center sm:flex-row flex-col sm:py-2 py-0 sm:px-2 px-0">
-              <RiHomeSmileFill className="sm:text-xl text-[3rem]" />
-              <div className="text-xs sm:text-sm sm:mx-3 mx-0">Beauty</div>
+    <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
+      <div className="xl:w-[1280px] w-full">
+        <div>Product Category</div>
+        <div className="flex flex-wrap mx-[-0.5rem] px-[0.5rem] items-stretch">
+          {data.map((e) => (
+            <div className="xl:w-1/12 lg:w-1/6 sm:w-1/4 w-1/3">
+              <div className="bg-white text-black overflow-auto h-full flex items-center flex-col sm:py-2 py-0 sm:px-2 px-0 border-[1px] hover:shadow-md">
+                <div className="h-16 w-full flex justify-center items-center relative">
+                  <Image
+                    fill
+                    style={{ objectFit: "contain" }}
+                    src={`${e.image}`}
+                    alt={`${e.category}`}
+                  />
+                </div>
+                <div className="text-xs sm:text-sm sm:mx-3 mx-0 mt-2">
+                  {e.category}
+                </div>
+              </div>
             </div>
-            <div className="sm:bg-white sm:text-black rounded-full w-1/4 mx-2 flex items-center sm:flex-row flex-col sm:py-2 py-0 sm:px-2 px-0">
-              <RiHomeSmileFill className="sm:text-xl text-[3rem]" />
-              <div className="text-xs sm:text-sm sm:mx-3 mx-0">Cloath</div>
-            </div>
-            <div className="sm:bg-white sm:text-black rounded-full w-1/4 mx-2 flex items-center sm:flex-row flex-col sm:py-2 py-0 sm:px-2 px-0">
-              <RiHomeSmileFill className="sm:text-xl text-[3rem]" />
-              <div className="text-xs sm:text-sm sm:mx-3 mx-0">Health</div>
-            </div>
-            <div className="sm:bg-white sm:text-black rounded-full w-1/4 mx-2 flex items-center sm:flex-row flex-col sm:py-2 py-0 sm:px-2 px-0">
-              <RiHomeSmileFill className="sm:text-xl text-[3rem]" />
-              <div className="text-xs sm:text-sm sm:mx-3 mx-0">Furniture</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-   
+    </div>
   );
 };
 
