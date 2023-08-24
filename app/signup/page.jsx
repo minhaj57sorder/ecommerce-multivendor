@@ -2,8 +2,8 @@ import React from "react";
 
 const siteAdminLogin = () => {
   return (
-    <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
-      <div className="xl:w-[1280px] w-full">
+    <div className="flex flex-wrap justify-center max-w-full py-2 px-2 2xl:px-0">
+      <div className="2xl:w-[1536px] w-full">
         <div>
           <form>
             <div className="grid gap-6 mb-6 md:grid-cols-2">

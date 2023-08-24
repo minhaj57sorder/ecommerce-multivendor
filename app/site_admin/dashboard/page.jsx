@@ -4,8 +4,8 @@ import AdminDashboardSidebar from "../../components/sidebar/adminDashboard/Admin
 const dashboard = () => {
   return (
     <div>
-      <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
-        <div className="xl:w-[1280px] w-full">
+      <div className="flex flex-wrap justify-center max-w-full py-2 px-2 2xl:px-0">
+        <div className="2xl:w-[1536px] w-full">
           <div>Product Category</div>
           <div className="flex flex-wrap mx-[-0.5rem] px-[0.5rem] items-stretch">
             <div className="xl:w-1/3 lg:w-1/3 sm:w-1/4 w-1/3">

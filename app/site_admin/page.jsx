@@ -2,7 +2,7 @@ import React from "react";
 
 const siteAdminLogin = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center xl:h-[650px] max-w-full py-2 px-2 xl:px-0">
+    <div className="flex flex-wrap justify-center items-center xl:h-[650px] max-w-full py-2 px-2 2xl:px-0">
       <div className="xl:w-[380px] w-full">
         <div>
           <form>

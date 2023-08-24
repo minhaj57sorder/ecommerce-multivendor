@@ -6,7 +6,7 @@ import Link from "next/link";
 const HeaderComp = () => {
   return (
     <div className="flex justify-center max-w-full bg-slate-50 py-2 px-2 md:px-0">
-      <div className="xl:w-[1280px] w-full">
+      <div className="2xl:w-[1536px] w-full">
         <div className="flex justify-between items-center ">
           <Link href="/">
           <div className="logo text-4xl text-slate-800 md:block hidden">

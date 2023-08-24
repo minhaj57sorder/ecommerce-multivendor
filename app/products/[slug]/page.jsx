@@ -44,8 +44,8 @@ const page = async ({ params }) => {
   const data = await getProductDetails(params.slug);
   return (
     <div className="bg-slate-100">
-      <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
-        <div className="xl:w-[1280px] w-full">
+      <div className="flex flex-wrap justify-center max-w-full py-2 px-2 2xl:px-0">
+        <div className="2xl:w-[1536px] w-full">
           <div className="bg-white">
             <div className="grid lg:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-3 items-stretch">
               <div className="">

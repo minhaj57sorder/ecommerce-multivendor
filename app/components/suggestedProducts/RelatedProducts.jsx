@@ -25,8 +25,8 @@ const maxCharLength = (str,len)=>{
 const RelatedProducts = async() => {
   const data = await getProducts();
   return (
-    <div className="flex flex-wrap justify-center max-w-full py-2 px-2 xl:px-0">
-      <div className="xl:w-[1280px] w-full">
+    <div className="flex flex-wrap justify-center max-w-full py-2 px-2 2xl:px-0">
+      <div className="2xl:w-[1536px] w-full">
         <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-1 items-stretch">
           {data.map((e) => (
             <div className=" bg-white">

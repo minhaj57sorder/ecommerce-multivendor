@@ -30,3 +30,9 @@ body {
   width: 18px;
   height: 18px;
 }
+.filter-sidebar-width{
+  width: 300px;
+}
+.filtered-product-list-width{
+  width: calc(100% - 310px);
+}
