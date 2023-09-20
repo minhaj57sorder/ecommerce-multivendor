@@ -21,13 +21,14 @@ const ProductCategory = async () => {
       <div className="2xl:w-[1536px] w-full">
         <div>Product Category</div>
         <div className="flex flex-wrap mx-[-0.5rem] px-[0.5rem] items-stretch">
-          {data.map((e) => (
-            <div className="xl:w-1/12 lg:w-1/6 sm:w-1/4 w-1/3">
+          {data.map((e, index) => (
+            <div className="xl:w-1/12 lg:w-1/6 sm:w-1/4 w-1/3" key={index}>
               <div className="bg-white text-black overflow-auto h-full flex items-center flex-col sm:py-2 py-0 sm:px-2 px-0 border-[1px] hover:shadow-md">
                 <div className="h-16 w-full flex justify-center items-center relative">
                   <Image
                     fill
                     style={{ objectFit: "contain" }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     src={`${e.image}`}
                     alt={`${e.category}`}
                   />

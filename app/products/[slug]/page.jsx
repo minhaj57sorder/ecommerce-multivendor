@@ -75,8 +75,8 @@ const page = async ({ params }) => {
                 </div>
                 <table className="text-sm">
                   <tbody>
-                    {options.map((option) => (
-                      <tr className="">
+                    {options.map((option, index) => (
+                      <tr className="" key={index}>
                         <td className="">
                           <span className="font-bold">{option.name}: </span>
                         </td>

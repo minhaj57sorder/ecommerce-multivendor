@@ -27,14 +27,15 @@ const FeaturedProducts = async () => {
       <div className="2xl:w-[1536px] w-full">
         <div>Category</div>
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-1 mx-[-0.5rem] px-[0.5rem] items-stretch">
-          {data.map((e) => (
-            <div className=" bg-white">
+          {data.map((e, index) => (
+            <div className=" bg-white" key={index}>
               <div className=" text-black overflow-auto h-full flex flex-col sm:py-2 py-1 sm:px-2 px-1 border-[1px] hover:border-yellow-400 hover:shadow-md relative">
                 <div className="absolute top-0 left-0 z-10 p-1 text-xs bg-yellow-400 text-white  after:h-full after:border-[0.75rem] after:border-yellow-400 after:border-b-transparent after:border-r-transparent after:absolute after:left-full after:top-0">Best Seller</div>
                 <div className="h-64 bg-slate-100 w-full flex justify-center items-center relative cursor-pointer">
                   <Image
                     fill
                     style={{objectFit: 'contain'}}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     src={`${e.image}`}
                     alt={`${e.category}`}
                   />

@@ -42,6 +42,7 @@ export default function SliderComp() {
           <Image
             width={300}
             height={300}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             src={
               "https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png"
             }
@@ -52,6 +53,7 @@ export default function SliderComp() {
           <Image
             width={300}
             height={300}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             src={
               "https://png.pngtree.com/background/20230303/original/pngtree-green-sparkling-bg-picture-image_2079950.jpg"
             }
@@ -72,6 +74,7 @@ export default function SliderComp() {
             <Image
               width={300}
               height={300}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               src={
                 "https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png"
               }
@@ -82,6 +85,7 @@ export default function SliderComp() {
             <Image
               width={300}
               height={300}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               src={
                 "https://png.pngtree.com/background/20230303/original/pngtree-green-sparkling-bg-picture-image_2079950.jpg"
               }

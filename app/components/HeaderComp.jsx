@@ -1,18 +1,21 @@
+'use client'
 import { BsSearch, BsGooglePlay } from "react-icons/bs";
 import { RiHomeSmileFill } from "react-icons/ri";
 import { BiCart } from "react-icons/bi";
 import Link from "next/link";
-
+import { signIn } from "next-auth/react";
+import { LogInUserContext } from "../lib/contextpis/AuthContext";
+import { useContext } from "react";
 const HeaderComp = () => {
+  const {logInUser} = useContext(LogInUserContext)
   return (
     <div className="flex justify-center max-w-full bg-slate-50 py-2 px-2 md:px-0">
       <div className="2xl:w-[1536px] w-full">
         <div className="flex justify-between items-center ">
           <Link href="/">
-          <div className="logo text-4xl text-slate-800 md:block hidden">
-            <RiHomeSmileFill />
-          </div>
-
+            <div className="logo text-4xl text-slate-800 md:block hidden">
+              <RiHomeSmileFill />
+            </div>
           </Link>
           <div className="searchbar w-full md:w-[30rem] relative">
             <input
@@ -25,6 +28,14 @@ const HeaderComp = () => {
           </div>
           <div className="cart text-3xl text-slate-800  md:flex hidden">
             <BiCart />
+            <div>{logInUser}</div>
+            <button
+              onClick={() => {
+                signIn()
+              }}
+            >
+              Sign in
+            </button>
             {/* <div className="flex items-center w-28 ">
               <div className="text-xs">App Store</div>
               <BsGooglePlay />
